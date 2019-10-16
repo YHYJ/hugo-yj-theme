@@ -15,7 +15,7 @@ autoThumbnailImage: yes
 coverImage: https://example.com/image.jpg
 metaAlignment: center
 coverCaption: "文章封面图片描述"
-coverMeta: in
+coverMeta: out
 coverSize: full
 ---
 
