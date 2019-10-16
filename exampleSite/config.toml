@@ -1,94 +1,72 @@
-# Tranquilpeak
-# Version : 0.4.7-BETA
-# Author : Thibaud Leprêtre
+### YJ -- Forked from https://github.com/kakawait/hugo-tranquilpeak-theme
+### Version : 1.0.0
+### Author : YHYJ
 
-# I STRONGLY recommend you to use a CDN to speed up loading of pages.
-# There is many free CDN like Cloudinary or you can also use indirectly
-# by using services like Google Photos.
+### 修改前请详细阅读注释
+### 注释开头： #是用户自定义字段，##是不建议修改的字段，###是说明性文字
 
-# If you want to store images yourself, please read this guidelines:
-# For users, if you only use this theme, put your images directly in `source/assets/images` folder
-# But if you want to add local images, you can put your images directly in `source/assets/images` folder
-# For developpers, if you modify this theme, put your images in `source/images` folder and
-# use grunt task `build` to synchronize assets
+### 建议通过阿里、七牛、又拍云等进行CDN加速
 
-baseURL = "https://example.org/"
-languageCode = "en-us"
-defaultContentLanguage = "en-us"
-title = "Hugo tranquilpeak theme"
-theme = "hugo-tranquilpeak-theme"
-disqusShortname = "hugo-tranquilpeak-theme"
-# googleAnalytics = "UA-123-45"
-paginate = 7
-canonifyurls = true
+baseURL = "https://example.org"     # 站点地址
+languageCode = "en-us"              ## 语言选项
+defaultContentLanguage = "zh-cn"    # 显示文本的语言
+title = "Your site name"            # 站点名
+theme = "hugo-yj-theme"             # 根据下载到themes时的文件夹名确定
+disqusShortname = "XXXXXX"          # Disqus短语，用于添加留言系统
+googleAnalytics = "XXXXXX"          # google analytics UA
+paginate = 7                        # 每页最多显示的文章数
+canonifyurls = true                 ## 网址规范化
 
-[permalinks]
-  post = "/:year/:month/:slug/"
+[permalinks]                        ### 文章URL
+  post = "/:year/:month/:slug/"     ## 文章URL命名规则：baseURL/year/month/postname
 
-[taxonomies]
-  tag = "tags"
-  category = "categories"
-  archive = "archives"
+[taxonomies]                        ### 分类法
+  tag = "tags"                      ## 标签
+  category = "categories"           ## 分类
+  archive = "archives"              ## 归档
 
-[author]
-  name = "Firstname Lastname"
-  bio = "Super bio with markdown support **COOL**"
-  job = "Your job title"
-  location = "France"
-  # Your Gravatar email. Overwrite `author.picture` everywhere in the blog
-  gravatarEmail = "thibaud.lepretre@gmail.com"
-  # Your profile picture
-  # Overwritten by your gravatar image if `author.gravatarEmail` is filled
-  picture = "https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-512.png"
-  # Your Twitter username without the @. E.g : thibaudlepretre
-  # twitter = "thibaudlepretre"
-  # Your google plus profile id. E.g : +ThibaudLepretre or 114625208755123718311
-  # googlePlus = "+ThibaudLepretre"
+[author]                                    ### 作者信息
+  name = "Firstname Lastname"               # 作者名
+  bio = "**Hola**"                          # 简介
+  job = "Your job title"                    # 职业名，在about页面的信息
+  location = "China"                        # 所在地，在about页面的信息
+  gravatarEmail = "XXX@example.com"         # Gravatar注册邮箱，用于显示用户头像
+  picture = "https://example.com/XXX.png"   # 当gravatarEmail为空时使用该图片作为用户头像
+  # twitter = "XXXXXX"                      # 不加@的twitter账户名，例如'abcdef'
+  # googlePlus = "XXXXXX"                   # google plus账户名，例如'+abcdef'
 
-# Menu Configuration
-[[menu.main]]
-  weight = 1
-  identifier = "home"
-  name = "Home"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"
-  url = "/"
+# 侧边栏，点后面的字符代表分区，一共有['main', 'links', 'misc']三种
+[[menu.main]]                                                       # 分区名
+  weight = 1                                                        # 排序
+  identifier = "home"                                               ## 标识符
+  name = "Home"                                                     # 显示的名字
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-home\"></i>"    # 图标
+  url = "/"                                                         # 链接的URI
 [[menu.main]]
   weight = 2
-  identifier = "categories"
-  name = "Categories"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
-  url = "/categories"
-[[menu.main]]
-  weight = 3
-  identifier = "tags"
-  name = "Tags"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
-  url = "/tags"
-[[menu.main]]
-  weight = 4
-  identifier = "archives"
-  name = "Archives"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
-  url = "/archives"
-[[menu.main]]
-  weight = 5
-  identifier = "about"
-  name = "About"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
-  url = "/#about"
-
-[[menu.links]]
-  weight = 1
   identifier = "github"
   name = "GitHub"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-github\"></i>"
   url = "https://github.com/kakawait"
+
+[[menu.links]]
+  weight = 1
+  identifier = "categories"
+  name = "Categories"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-bookmark\"></i>"
+  url = "/categories"
 [[menu.links]]
   weight = 2
-  identifier = "stackoverflow"
-  name = "Stack Overflow"
-  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-stack-overflow\"></i>"
-  url = "https://stackoverflow.com/users/636472/kakawait"
+  identifier = "tags"
+  name = "Tags"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-tags\"></i>"
+  url = "/tags"
+[[menu.links]]
+  weight = 3
+  identifier = "archives"
+  name = "Archives"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-archive\"></i>"
+  url = "/archives"
 
 [[menu.misc]]
   weight = 1
@@ -96,32 +74,28 @@ canonifyurls = true
   name = "RSS"
   pre = "<i class=\"sidebar-button-icon fa fa-lg fa-rss\"></i>"
   url = "/index.xml"
+[[menu.misc]]
+  weight = 2
+  identifier = "about"
+  name = "About"
+  pre = "<i class=\"sidebar-button-icon fa fa-lg fa-question\"></i>"
+  url = "/#about"
 
-[params]
-  # Customize date format use to render blog post date, categories and other
-  # You must use date format used by Go Time package https://golang.org/pkg/time/
-  # Months (not work with short month like "jan", "feb", etc) are translated if translation exists on i18n folders
-  # Default format is: January 2, 2006
-  # dateFormat = "2 January 2006"
+[params]                                    ### 辅助功能参数
+  ### 文章显示的日期格式，必须使用Golang的time包(https://golang.org/pkg/time/)中定义的格式
+  dateFormat = "2006-1-2"                   ### 默认是：2 January 2006
 
-  # Global keywords configuration. Following keywords will be add to every pages
-  # keywords = ["development", "next-gen"]
+  keywords = ["development", "next-gen"]    # 供搜索引擎使用的搜索关键字
 
-  # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
-  # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
+  syntaxHighlighter = "highlight.js"        # 代码高亮模式，有"highlight.js"和'prism.js'两种
 
-  # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
-  clearReading = true
+  clearReading = true                       # 阅读时隐藏侧边栏
 
-  # Define categories will create hierarchy between parents: `categories = ["foo", "bar"]` will consider "bar" a sub-category of "foo".
-  # If false it will flat categories.
-  hierarchicalCategories = true
+  hierarchicalCategories = true             # 在"分类"之间建立层级关系
 
-  description = "Hugo tranquilpeak theme demo"
+  description = "Hola"                      # 站点描述
 
-  # Customization
-  # Define the behavior of the sidebar
+  ### 定义侧边栏模式
   # 1: Display extra large sidebar on extra large screen, large sidebar on large screen,
   #    medium sidebar on medium screen and header bar on small screen and
   # extra large sidebar is swiped on extra large screen and large sidebar on all lower screen (default)
@@ -133,32 +107,17 @@ canonifyurls = true
   #    large sidebar is swiped on all lower screens
   # 5: Display header bar on all screens and large sidebar is swiped on large screen
   # 6: Display header bar on all screens and medium sidebar is swiped
-  sidebarBehavior = 1
+  sidebarBehavior = 2               # 1-宽；2-中；3-窄；4-折叠式&宽；5-折叠式&中；6-折叠式&窄
 
-  # Your blog cover picture. I STRONGLY recommend you to use a CDN to speed up loading of pages.
-  # There is many free CDN like Cloudinary or you can also use indirectly
-  # by using services like Google Photos.
-  # Current image is on AWS S3 and delivered by AWS CloudFront.
-  # Otherwise put your image, for example `cover.jpg` in folder `static/images/`,
-  # and use relative url : `images/cover.jpg`
-  coverImage = "images/cover.jpg"
+  coverImage = "images/cover.jpg"   # 博客封面。可以使用本地文件或者URL.本地文件放在theme/static/images下
 
-  # Display an image gallery at the end of a post which have photos variables (false: disabled, true: enabled)
-  imageGallery = true
+  imageGallery = true               # 图片墙，用于默认缩略图或者文章封面
 
-  # Display thumbnail image of each post on index pages (false: disabled, true: enabled)
-  thumbnailImage = true
-  # Display thumbnail image at the right of title in index pages (`right`, `left` or `bottom`)
-  # Set this value to `right` if you have old posts to keep the old style on them
-  # and define `thumbnailImagePosition` on a post to overwrite this setting
-  thumbnailImagePosition = "bottom"
-  # Automatically select the cover image or the first photo from the gallery of a post if there is no thumbnail image as the thumbnail image
-  # Set this value to `true` if you have old posts that use the cover image or the first photo as the thumbnail image
-  # and set `autoThumbnailImage` to `false` on a post to overwrite this setting
-  autoThumbnailImage = true
+  thumbnailImage = true             # 文章缩略图
+  thumbnailImagePosition = "left"   # 缩略图和标题的相对位置('right', 'left', 'bottom')，可以在具体的文章里单独设置
+  autoThumbnailImage = true         # 如果没有指定缩略图，自动从文章的图片墙提取一张
 
-  # Your favicon path, default is "/favicon.png"
-  # favicon = "/favicon.png"
+  favicon = "/favicon.png"          # 网站图标
 
   # Header configuration
   # The link at the right of the header is customizable
@@ -168,24 +127,18 @@ canonifyurls = true
   #     icon: search
   #     class: st-search-show-outputs
 
-  # Display `Next` on left side of the pagination, and `Prev` on right side one.
-  # If you set this value to `true`, these positions swap.
-  # swapPaginator = true
+  swapPaginator = true              # "上一篇"和"下一篇"按钮的相对位置，为'true'则"上一篇"在左，否则在右
 
   # Custom CSS. Put here your custom CSS files. They are loaded after the theme CSS;
   # they have to be referred from static root. Example
   # [[params.customCSS]]
   #   href = "css/mystyle.css"
 
-  # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
-  # they have to be referred from static root. Example
-  # [[params.customJS]]
-  #   src = "js/myscript.js"
+  ### 自定义JS插件
+  [[params.customJS]]
+    src = "js/script-clicklove.min.js"  # 点击出现爱心效果
 
-  # Sharing options
-  # Comment and uncomment to enable or disable sharing options
-  # If you wanna add a sharing option, read user documentation :
-  # Tranquilpeak configuration > Theme configuration > sharing-options
+  ### 分享按钮
   [[params.sharingOptions]]
     name = "Facebook"
     icon = "fa-facebook-official"
@@ -201,15 +154,13 @@ canonifyurls = true
     icon = "fa-google-plus"
     url = "https://plus.google.com/share?url=%s"
 
-  [params.header.rightLink]
+  [params.header.rightLink]             ### 页面右上角的"about"按钮
     class = ""
-    icon = ""
-    url = "/#about"
+    icon = "address-card"               # 按钮图标
+    url = "/#about"                     # 按钮功能
 
-  # Customize link of author avatar in sidebar
-  # [params.sidebar.profile]
-  #   url = "/#about"
+  [params.sidebar.profile]              ### 点击侧边栏作者头像时候的动作
+    url = "/#about"                     # 点击后转到的链接
 
-  # Customize copyright value "© 2017 <CUSTOMIZATION>. All Rights Reserved"
-  # [params.footer]
-  #   copyright = "<a href=\"https://github.com/kakawait\">kakawait</a>"
+  [params.footer]                                                   ### 页脚信息
+    copyright = "<a href=\"https://github.com/XXXXXX\">XXXXXX</a>"  # copyright信息
