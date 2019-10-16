@@ -5,11 +5,20 @@ categories:
 - category
 - subcategory
 tags:
-- tag1
-- tag2
+- tagX
+- tagY
 keywords:
 - tech
-#thumbnailImage: //example.com/image.jpg
+thumbnailImage: https://example.com/image.jpg
+thumbnailImagePosition: left
+autoThumbnailImage: yes
+coverImage: https://example.com/image.jpg
+metaAlignment: center
+coverCaption: "文章封面图片描述"
+coverMeta: in
+coverSize: full
 ---
 
+<!-- 文章摘要，取消注释即可显示 -->
 <!--more-->
+<!-- toc -->
