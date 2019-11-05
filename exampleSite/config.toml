@@ -87,7 +87,7 @@ canonifyurls = true                 ## 网址规范化
 
   keywords = ["development", "next-gen"]    # 供搜索引擎使用的搜索关键字
 
-  syntaxHighlighter = "highlight.js"        # 代码高亮模式，有"highlight.js"和'prism.js'两种
+  syntaxHighlighter = "highlight.js"        # 代码高亮模式，有"highlight.js"和"prism.js"两种
 
   clearReading = true                       # 阅读时隐藏侧边栏
 
