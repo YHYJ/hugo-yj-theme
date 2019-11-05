@@ -17,8 +17,9 @@ metaAlignment: center
 coverCaption: "文章封面图片描述"
 coverMeta: out
 coverSize: full
-summary: "......"
 ---
+
+文章摘要......
 
 <!--more-->
 
