@@ -8,6 +8,8 @@ Tools：网页寄存服务--[Github Pages](https://pages.github.com/)，静态�
 
 [图片在线压缩](https://www.yasuotu.com/)
 
+本页面基本是[hugo-tranquilpeak-theme/user.md](https://github.com/kakawait/hugo-tranquilpeak-theme/blob/master/docs/user.md)的翻译
+
 ---
 
 ## hugo-yj-theme
@@ -219,6 +221,8 @@ Tools：网页寄存服务--[Github Pages](https://pages.github.com/)，静态�
 
 ### 定制化
 
+#### 文章格式
+
 > **Notes**：并不是所有的定制化内容都会在这个文档记录，详情查看[example config.toml](https://github.com/YHYJ/hugo-yj-theme/blob/master/exampleSite/config.toml)
 
 ```toml
@@ -259,4 +263,19 @@ Tools：网页寄存服务--[Github Pages](https://pages.github.com/)，静态�
 当`hierarchicalCategories = false`时，'archives'页面如图：
 
 ![False](https://gitee.com/YJ1516/MyPic/raw/master/picgo/without_hierarchical_categories.png)
+
+#### 代码高亮
+
+自带的代码高亮支持很少，可以自定义添加JS来完善：
+
+```toml
+[params]
+  [[params.customJS]]
+    src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"
+    crossorigin = "anonymous"
+    async = true
+    defer = true
+```
+
+
 
