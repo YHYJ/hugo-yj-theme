@@ -277,3 +277,220 @@ Tools：网页寄存服务--[Github Pages](https://pages.github.com/)，静态�
     defer = true
 ```
 
+#### 标签
+
+可以使用标签突出显示告警信息等：
+
+##### 语法
+
+```html
+{{< alert [classes] >}}
+[content]
+{{< /alert >}}
+```
+
+<table>
+    <tr>
+        <td>Argument</td>
+        <td>Description</td>
+   </tr>
+    <tr>
+        <td rowspan="5">classes</td>
+        <td >info</td>
+    </tr>
+    <tr>
+        <td >success</td>
+    </tr>
+    <tr>
+        <td >warning</td>
+    </tr>
+    <tr>
+        <td >danger</td>
+    </tr>
+    <tr>
+        <td >no-icon</td>
+    </tr>
+</table>
+
+> 将`[classes]`和`[content]`分别替换为信息级别和信息本体
+
+##### 示例
+
+```html
+{{< alert info no-icon >}}
+这是一个没有图标的信息标签
+{{< /alert >}}
+
+{{< alert info >}}
+这是一个信息标签
+{{< /alert >}}
+```
+
+![Tags](https://gitee.com/YJ1516/MyPic/raw/master/picgo/tags.png)
+
+#### 高亮文本
+
+使用高亮文本突出显示文章中有趣或者重要的部分
+
+##### 语法
+
+```html
+{{< hl-text [classes] >}}
+[content]
+{{< /hl-text >}}
+```
+
+> 将`[classes]`和`[content]`分别替换为高亮级别和信息本体
+
+<table>
+    <tr>
+        <td>Argument</td>
+        <td>Description</td>
+   </tr>
+    <tr>
+        <td rowspan="11">classes</td>
+        <td >red</td>
+    </tr>
+    <tr>
+        <td >green</td>
+    </tr>
+    <tr>
+        <td >blue</td>
+    </tr>
+    <tr>
+        <td >purple</td>
+    </tr>
+    <tr>
+        <td >orange</td>
+    </tr>
+    <tr>
+        <td >yellow</td>
+    </tr>
+    <tr>
+        <td >cyan</td>
+    </tr>
+    <tr>
+        <td >primary</td>
+    </tr>
+    <tr>
+        <td >success</td>
+    </tr>
+    <tr>
+        <td >warning</td>
+    </tr>
+    <tr>
+        <td >danger</td>
+    </tr>
+</table>
+
+##### 示例
+
+```html
+{{< hl-text cyan >}}
+青色高亮文本
+{{< /hl-text >}}
+\
+{{< hl-text primary >}}
+首要高亮文本
+{{< /hl-text >}}
+```
+
+> 去掉中间的`\`两个高亮文本将会合并为一行
+
+![Highlight Text](https://gitee.com/YJ1516/MyPic/raw/master/picgo/text.png)
+
+#### 可放大的图片
+
+> 普通图片直接使用Markdown语法添加就可以，但这种图片不能点击放大
+
+image tag可以自定义可以点击放大的图片并创建画廊
+
+##### 语法
+
+```css
+{{< image classes="[classes]" src="[/path/to/image]" thumbnail="[/path/to/thumbnail]" group="[group-name]" thumbnail-width="[width of thumbnail]" thumbnail-height="[height of thumbnail]" title="[title text]" >}}
+```
+
+其中：
+
+`[classes]`有以下值：
+
+- `fancybox`：生成一个特效盒，**只有添加了fancybox才能有可点击属性**
+- `nocaption`：不显示图片标题
+- `left`：图片居左放置
+- `right`：图片居右放置
+- `center`：图片居中放置
+- `fig-20(/25/33/50/75)`：图片长度是文章区域宽度的百分之多少并居左放置
+- `fig-100`：图片长度是文章区域宽度的100%并居中放置
+- `clear`：在图片后附加一个`clear:both`div
+
+`group`：可选的。用于创建画廊（仅适用于带有`fancybox`的图片）
+
+`src`：图片URL
+
+`thumbnail`：可选的。缩略图的URL，为空时将显示`src`的图片
+
+`thumbnail-width`：可选的。缩略图宽度（可以使用类似150px或者85%表示）
+
+`thumbnail-height`：可选的。缩略图高度，（可以使用类似300px或者20%表示）
+
+`title`：可选的。图片的标题
+
+#### 选项卡式代码块
+
+选项卡式代码块可用于对多个相关代码进行分组，例如web程序代码（html、css和js）或者比较不同语言的代码
+
+##### 语法
+
+```css
+{{< tabbed-codeblock [name] [link] >}}
+    <!-- tab [lang] -->
+       [source code]
+    <!-- endtab -->
+{{< /tabbed-codeblock >}}
+```
+
+| Argument | Description                  |
+| -------- | ---------------------------- |
+| [name]   | 可选的。代码块或者文件的名字 |
+| [link]   | 可选的。demo或者文件的名字   |
+| [lang]   | 可选的。当前选项使用的语言   |
+
+##### 示例
+
+```css
+{{< tabbed-codeblock example >}}
+    <!-- tab shell -->
+        echo 'Hello World'
+    <!-- endtab -->
+    <!-- tab python -->
+        print('Hello World')
+    <!-- endtab -->
+{{< /tabbed-codeblock >}}
+```
+
+![Tabbed code block](https://gitee.com/YJ1516/MyPic/raw/master/picgo/tabbed.png)
+
+#### 全宽图片
+
+全宽图片的宽度和显示器相等（同时取决于其自身的宽度）
+
+##### 语法
+
+```css
+{{< wide-image src="[/path/to/image]" title="[title text]" >}}
+```
+
+| Argument | Description        |
+| -------- | ------------------ |
+| src      | 图片URL            |
+| title    | 可选的。图片的标题 |
+
+##### 示例
+
+```css
+{{< wide-image src="https://i.loli.net/2019/11/05/WCiUr65LuHG29gT.jpg" title="全宽图片" >}}
+```
+
+![Wideimage](https://gitee.com/YJ1516/MyPic/raw/master/picgo/91106112331.png)
+
