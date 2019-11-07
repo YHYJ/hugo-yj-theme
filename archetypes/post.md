@@ -21,7 +21,7 @@ thumbnailImagePosition: left
 metaAlignment: center
 coverImage: https://example.com/image.jpg
 coverCaption: "文章封面图片描述"
-coverMeta: out
+coverMeta: in
 coverSize: full
 ---
 
