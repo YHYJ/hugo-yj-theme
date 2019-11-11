@@ -293,10 +293,25 @@ Tools：网页寄存服务--[Github Pages](https://pages.github.com/)，静态�
 ```toml
 [params]
   [[params.customJS]]
-    src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/dockerfile.min.js"
+    src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/go.min.js"
+    integrity = "sha256-LVuWfOU0rWFMCJNl1xb3K2HSWfxtK4IPbqEerP1P83M="
     crossorigin = "anonymous"
     async = true
     defer = true
+
+  [[params.customJS]]
+    src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/languages/dockerfile.min.js"
+    integrity = "sha256-putofyQv7OB569xAldpyBnHJ0Uc+7VGp5Us05IgDGss="
+    crossorigin = "anonymous"
+    async = true
+    defer = true
+
+  [[params.customJS]]
+    src = "js/myscript.js"
+
+  [[params.customCSS]]
+    href = "css/mystyle.css"
+
 ```
 
 #### 标签
